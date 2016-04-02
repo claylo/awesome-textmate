@@ -1,0 +1,9 @@
+logs
+*.log
+lib-cov
+coverage
+/node_modules/*
+
+# TextMate
+.tm_properties
+

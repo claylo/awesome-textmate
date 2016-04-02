@@ -1,0 +1,31 @@
+language: node_js
+
+cache:
+  directories:
+  - node_modules
+
+notifications:
+  email: false
+
+node_js:
+- '5'
+
+before_install:
+- rvm install 2.2
+- npm update -g npm
+
+install:
+- gem install awesome_bot
+- npm install
+
+before_script:
+- npm run build
+
+script:
+- awesome_bot README.md --allow-dupe --allow-redirect
+
+after_success:
+  - eval "$(ssh-agent -s)"
+  - chmod 600 .travis/deploy_key.pem
+  - ssh-add .travis/deploy_key.pem
+  - npm run deploy-from-travis

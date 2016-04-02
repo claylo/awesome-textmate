@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [[ $TRAVIS_PULL_REQUEST == false ]]; then
+	
+	if [[ $TRAVIS_BRANCH == 'master' ]]; then
+		
+		git add README.md
+		git commit -C $TRAVIS_COMMIT -m '[ci skip]'
+		git push origin master
+		
+	fi
+	
+fi

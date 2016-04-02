@@ -1,0 +1,17 @@
+#!/usr/bin/env node
+'use strict';
+
+var fs = require('fs');
+var markdownInclude = require('markdown-include');
+
+process.chdir(__dirname + '/../.README');
+
+markdownInclude.compileFiles('../markdown.json').then(function (data) {
+  var parts = data.split('<!-- begin -->');
+  var contents = parts[0].trim();
+  var compiled = parts[1].trim();
+  data = compiled.replace('<!-- ContentsGoHere -->', contents);
+  //return data;
+  data += "\n";
+  fs.writeFileSync('../README.md', data);
+});
