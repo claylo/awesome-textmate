@@ -11,6 +11,8 @@
 
 #include "bundle-creation.md"
 
+#include "plugins.md"
+
 ## Resources !heading
 
 #include "contacts.md"

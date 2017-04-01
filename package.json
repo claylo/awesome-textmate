@@ -8,10 +8,12 @@
   },
   "author": "Clay Loveless <clay@loveless.net> (http://about.me/claylo)",
   "dependencies": {
+    "markdown-include": "^0.4.3",
+    "markdown-link-extractor": "^1.1.0"
   },
   "devDependencies": {
     "chalk": "^1.1.3",
-    "link-check": "^2.0.0",
+    "link-check": "^4.0.2",
     "markdown-include": "^0.4.2",
     "markdown-link-check": "^1.0.0",
     "markdown-link-extractor": "^1.0.0"
